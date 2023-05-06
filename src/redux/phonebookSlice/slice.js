@@ -1,20 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const phonebookSlice = createSlice({
-  name: 'phonebookValue',
-  initialState: [],
+  name: 'phonebook',
+  initialState: {
+    contacts: [],
+    filter: '',
+  },
   reducers: {
     addContact(state, action) {
-      state.push(action.payload);
+      state.contacts.push(action.payload);
     },
     findContact(state, action) {
-      const normalizedFilter = action.payload.toLowerCase();
-      return state.filter(contact =>
-        contact.name.toLowerCase().includes(normalizedFilter)
-      );
+      return {
+        ...state,
+        filter: action.payload.toLowerCase(),
+      };
     },
     delContact(state, action) {
-      return state.filter(contact => contact.id !== action.payload);
+      return {
+        ...state,
+        contacts: state.contacts.filter(
+          contact => contact.id !== action.payload
+        ),
+      };
     },
   },
 });

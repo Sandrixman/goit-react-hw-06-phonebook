@@ -9,7 +9,7 @@ import { FormStyled, ErrorText, Label, Button } from './ContactForm.styled';
 const id = nanoid();
 
 const ContactForm = () => {
-  const contacts = useSelector(state => state.phonebook);
+  const contacts = useSelector(state => state.phonebook.contacts);
   const dispatch = useDispatch();
 
   const initialValues = {

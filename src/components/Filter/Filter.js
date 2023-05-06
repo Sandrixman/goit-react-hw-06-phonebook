@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { findContact } from 'redux/phonebookSlice/slice';
+import { getFilter } from 'redux/selectors';
 import { nanoid } from 'nanoid';
 import { FilterWrapper } from './Filter.styled';
 
 const id = nanoid();
 
 const Filter = () => {
-  const [filter, setFilter] = useState('');
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const changeFilter = e => {
-    setFilter(e.currentTarget.value);
-    dispatch(findContact(e.currentTarget.value));
+    const inputValue = e.currentTarget.value;
+    dispatch(findContact(inputValue));
   };
 
   return (
