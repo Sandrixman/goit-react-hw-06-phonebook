@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/store';
+import { addContact } from 'redux/phonebookSlice/slice';
 import { Formik, Field, ErrorMessage } from 'formik';
 import { string, number, object } from 'yup';
 import { nanoid } from 'nanoid';
@@ -9,7 +9,7 @@ import { FormStyled, ErrorText, Label, Button } from './ContactForm.styled';
 const id = nanoid();
 
 const ContactForm = () => {
-  const contacts = useSelector(state => state.myValue);
+  const contacts = useSelector(state => state.phonebook);
   const dispatch = useDispatch();
 
   const initialValues = {

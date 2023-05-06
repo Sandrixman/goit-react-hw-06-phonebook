@@ -1,20 +1,29 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { delContact } from '../../redux/store';
+import { delContact } from 'redux/phonebookSlice/slice';
+import {
+  ContactsList,
+  Contact,
+  ContactInfo,
+  Button,
+} from './ContactList.styled';
 
 const ContactList = () => {
-  const value = useSelector(state => state.myValue);
+  const contactsList = useSelector(state => state.phonebook);
   const dispatch = useDispatch();
 
   return (
     <>
-      {value.map(({ id, name, number }) => (
-        <ul key={id}>
-          <li>
-            {name}: {number}
-          </li>
-          <button onClick={() => dispatch(delContact(id))}>Delete</button>
-        </ul>
-      ))}
+      <ContactsList>
+        {contactsList.map(({ id, name, number }, index) => (
+          <Contact key={id}>
+            <ContactInfo>
+              {index + 1}. {name}:
+            </ContactInfo>
+            <ContactInfo>{number}</ContactInfo>
+            <Button onClick={() => dispatch(delContact(id))}>Delete</Button>
+          </Contact>
+        ))}
+      </ContactsList>
     </>
   );
 };

@@ -15,21 +15,16 @@ code {
     monospace;
 }
 
-section {
-  padding: 20px;
-}
-
-ul {
+ul,
+p {
   padding: 0;
   margin: 0;
-  display: flex;
 }
 
 li {
   padding: 5px;
   margin-left: 20px;
   font-size: 18px;
-  list-style: inside;
 }
 
 h3 {

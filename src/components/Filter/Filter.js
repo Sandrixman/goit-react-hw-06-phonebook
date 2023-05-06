@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { findContact } from '../../redux/store';
+import { findContact } from 'redux/phonebookSlice/slice';
 import { nanoid } from 'nanoid';
 import { FilterWrapper } from './Filter.styled';
 
