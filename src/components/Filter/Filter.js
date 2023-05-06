@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { findContact } from 'redux/phonebookSlice/slice';
-import { getFilter } from 'redux/selectors';
+import { getFilter } from 'redux/loginSlice/slice';
 import { nanoid } from 'nanoid';
 import { FilterWrapper } from './Filter.styled';
 

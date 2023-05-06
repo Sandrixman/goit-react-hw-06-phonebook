@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { delContact } from 'redux/phonebookSlice/slice';
-import { getContacts, getFilter } from 'redux/selectors';
+import { getContacts, delContact } from 'redux/phonebookSlice/slice';
+import { getFilter } from 'redux/loginSlice/slice';
 import {
   ContactsList,
   Contact,

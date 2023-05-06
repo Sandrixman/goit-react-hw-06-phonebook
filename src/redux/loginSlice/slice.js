@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 
-export const loginSlice = createSlice({
+const loginSlice = createSlice({
   name: 'login',
   initialState: {
     login: '',
@@ -18,4 +20,17 @@ export const loginSlice = createSlice({
   },
 });
 
+const persistLoginConfig = {
+  key: 'login',
+  storage,
+};
+
+export const persistLoginReducer = persistReducer(
+  persistLoginConfig,
+  loginSlice.reducer
+);
+
 export const { logIn, logOut } = loginSlice.actions;
+
+//selector
+export const getFilter = state => state.phonebook.filter;
