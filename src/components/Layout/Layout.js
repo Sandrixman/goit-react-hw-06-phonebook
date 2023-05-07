@@ -1,12 +1,14 @@
-import { Outlet } from 'react-router-dom';
-import AppBar from 'components/AppBar/AppBar';
+// import { Outlet } from 'react-router-dom';
+// import AppBar from 'components/AppBar/AppBar';
 import { Section } from './Layout.styled';
+import { Phonebook } from 'pages';
 
 const Layout = () => {
   return (
     <Section>
-      <AppBar />
-      <Outlet />
+      {/* <AppBar />
+      <Outlet /> */}
+      <Phonebook />
     </Section>
   );
 };
