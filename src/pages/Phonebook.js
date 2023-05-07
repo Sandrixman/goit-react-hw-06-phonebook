@@ -1,10 +1,10 @@
-import { useLogoutRedirect } from 'hooks/useLogoutRedirect';
+// import { useLogoutRedirect } from 'hooks/useLogoutRedirect';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 
 export const Phonebook = () => {
-  useLogoutRedirect();
+  // useLogoutRedirect();
 
   return (
     <>
