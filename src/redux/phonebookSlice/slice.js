@@ -13,18 +13,12 @@ const phonebookSlice = createSlice({
       state.contacts.push(action.payload);
     },
     findContact(state, action) {
-      return {
-        ...state,
-        filter: action.payload.toLowerCase(),
-      };
+      state.filter = action.payload.toLowerCase();
     },
     delContact(state, action) {
-      return {
-        ...state,
-        contacts: state.contacts.filter(
-          contact => contact.id !== action.payload
-        ),
-      };
+      state.contacts = state.contacts.filter(
+        contact => contact.id !== action.payload
+      );
     },
   },
 });
