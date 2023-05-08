@@ -31,6 +31,3 @@ export const persistLoginReducer = persistReducer(
 );
 
 export const { logIn, logOut } = loginSlice.actions;
-
-//selector
-export const getFilter = state => state.phonebook.filter;

@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts, delContact } from 'redux/phonebookSlice/slice';
-import { getFilter } from 'redux/loginSlice/slice';
+import { delContact } from 'redux/phonebookSlice/slice';
+import { getFilteredOutContacts } from 'redux/selectors';
+
 import {
   ContactsList,
   Contact,
@@ -9,13 +10,9 @@ import {
 } from './ContactList.styled';
 
 const ContactList = () => {
-  const fullContactsList = useSelector(getContacts);
-  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
-  const filteredOutContacts = fullContactsList.filter(contact =>
-    contact.name.toLowerCase().includes(filter)
-  );
+  const filteredOutContacts = useSelector(getFilteredOutContacts);
 
   return (
     <>

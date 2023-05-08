@@ -13,7 +13,7 @@ const phonebookSlice = createSlice({
       state.contacts.push(action.payload);
     },
     findContact(state, action) {
-      state.filter = action.payload.toLowerCase();
+      state.filter = action.payload;
     },
     delContact(state, action) {
       state.contacts = state.contacts.filter(
@@ -34,6 +34,3 @@ export const persistPhonebookReducer = persistReducer(
 );
 
 export const { addContact, findContact, delContact } = phonebookSlice.actions;
-
-//selector
-export const getContacts = state => state.phonebook.contacts;
